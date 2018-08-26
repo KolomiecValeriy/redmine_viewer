@@ -1,4 +1,4 @@
 services:
-#    redmine_viewer.example:
-#        class: RedmineViewerBundle\Example
-#        arguments: ["@service_id", "plain_value", "%parameter%"]
+    redmine_viewer.redmine_api_worker:
+        class: RedmineViewerBundle\Redmine\RedmineApiWorker
+        arguments: ['%redmine_viewer.redmine_api_key%', '@serializer']

@@ -3,5 +3,23 @@
 {% block title %}Redmine viewer{% endblock %}
 
 {% block body %}
-    <h1>Hello World!</h1>
+    <h2>Projects</h2>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Project name</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for project in projects %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td><a href="#">{{ project.name }}</a></td>
+                <td>{% if project.description|trim is not empty %}({{ project.description }}){% endif %}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}
