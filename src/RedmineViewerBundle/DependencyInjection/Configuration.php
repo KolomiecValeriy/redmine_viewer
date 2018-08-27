@@ -14,6 +14,11 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
+                ->scalarNode('redmine_api_url')
+                    ->isRequired()
+                ->end()
+            ->end()
+            ->children()
                 ->scalarNode('redmine_api_key')
                     ->isRequired()
                 ->end()

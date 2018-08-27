@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Redmine viewer{% endblock %}
+{% block title %}Projects{% endblock %}
 
 {% block body %}
     <h2>Projects</h2>
@@ -16,7 +16,7 @@
         {% for project in projects %}
             <tr>
                 <td>{{ loop.index }}</td>
-                <td><a href="#">{{ project.name }}</a></td>
+                <td><a href="{{ path('redmine_viewer_show_issues', { 'projectId' : project.id }) }}">{{ project.name }}</a></td>
                 <td>{% if project.description|trim is not empty %}({{ project.description }}){% endif %}</td>
             </tr>
         {% endfor %}

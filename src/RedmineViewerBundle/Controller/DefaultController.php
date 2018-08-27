@@ -25,4 +25,18 @@ class DefaultController extends Controller
             'projects' => $projects,
         ]);
     }
+
+    /**
+     * @Security("has_role('ROLE_USER')")
+     */
+    public function showIssuesAction($projectId)
+    {
+        $apiWorker = $this->get('redmine_viewer.redmine_api_worker');
+
+        $issues = $apiWorker->getIssuesPerProject($projectId);
+
+        return $this->render('@RedmineViewer/Default/issues.html.twig', [
+            'issues' => $issues,
+        ]);
+    }
 }

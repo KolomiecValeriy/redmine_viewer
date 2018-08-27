@@ -1,3 +1,9 @@
 redmine_viewer_homepage:
-    path:     /
+    path:   /
     defaults: { _controller: RedmineViewerBundle:Default:index }
+
+redmine_viewer_show_issues:
+    path:   /issues/{projectId}
+    defaults: { _controller: RedmineViewerBundle:Default:showIssues, projectId: 0 }
+    requirements:
+        projectId: '\d+'

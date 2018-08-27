@@ -12,6 +12,7 @@ class RedmineViewerExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        $container->setParameter('redmine_viewer.redmine_api_url', $config['redmine_api_url']);
         $container->setParameter('redmine_viewer.redmine_api_key', $config['redmine_api_key']);
     }
 }

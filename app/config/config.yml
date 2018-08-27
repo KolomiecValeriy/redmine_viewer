@@ -72,4 +72,5 @@ sensio_framework_extra:
         annotations: false
 
 redmine_viewer:
+    redmine_api_url: https://redmine.ekreative.com
     redmine_api_key: 2fda745bb4cdd835fdf41ec1fab82a13ddc1a54c
