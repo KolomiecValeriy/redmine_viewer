@@ -29,7 +29,10 @@
                 <td></td>
                 <td></td>
                 <td></td>
-                <td style="text-align: right;"><a href="{{ path('redmine_viewer_add_comment', {'issueId': issue.id}) }}">Add comment</a></td>
+                <td style="text-align: right;">
+                    <a href="{{ path('redmine_viewer_show_comments', {'issueId': issue.id}) }}">Show comments</a>
+                    <a href="{{ path('redmine_viewer_add_comment', {'issueId': issue.id}) }}">Add comment</a>
+                </td>
             </tr>
         {% endfor %}
         </tbody>

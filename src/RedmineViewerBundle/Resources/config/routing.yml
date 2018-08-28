@@ -9,7 +9,13 @@ redmine_viewer_show_issues:
         projectId: '\d+'
 
 redmine_viewer_add_comment:
-    path:   /comments/{issueId}
+    path:   /add_comment/{issueId}
     defaults: { _controller: RedmineViewerBundle:Comment:add, issueId: 0 }
+    requirements:
+        issueId: '\d+'
+
+redmine_viewer_show_comments:
+    path:   /show_comments/{issueId}
+    defaults: { _controller: RedmineViewerBundle:Comment:show, issueId: 0 }
     requirements:
         issueId: '\d+'

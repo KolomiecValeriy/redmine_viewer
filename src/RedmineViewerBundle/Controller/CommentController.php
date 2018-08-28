@@ -52,4 +52,20 @@ class CommentController extends Controller
             'issue' => $issue,
         ]);
     }
+
+    /**
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
+     */
+    public function showAction($issueId)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $comments = $em->getRepository(Comment::class)->findBy([
+            'issueId' => $issueId,
+        ]);
+
+        return $this->render('@RedmineViewer/Commetn/show.html.twig', [
+            'comments' => $comments,
+        ]);
+    }
 }

@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Comments{% endblock %}
+
+{% block body %}
+    <h2>Comments</h2>
+    <h3>total number of comments: {{ comments|length }}</h3>
+    <table>
+        <tbody>
+        {% for comment in comments %}
+            <tr>
+                <td>Author: <b>{{ comment.authorName }}</b></td>
+                <td>Created: {{ comment.createdAt | date('Y-m-d') }}</td>
+            </tr>
+            <tr>
+                <td colspan="2">{{ comment.message }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
