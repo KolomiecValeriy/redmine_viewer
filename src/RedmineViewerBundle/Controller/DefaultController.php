@@ -9,7 +9,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 class DefaultController extends Controller
 {
     /**
-     * @Security("has_role('ROLE_USER')")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      */
     public function indexAction()
     {
@@ -27,7 +27,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Security("has_role('ROLE_USER')")
+     * @Security("is_granted('IS_AUTHENTICATED_FULLY')")
      */
     public function showIssuesAction($projectId)
     {
