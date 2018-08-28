@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add comment{% endblock %}
+
+{% block body %}
+    <h2>Add comment for issue: {{ issue.subject }}</h2>
+
+    {{ form_start(commentForm) }}
+    {{ form_errors(commentForm.message) }}
+    {{ form_widget(commentForm.message) }}
+    {{ form_widget(commentForm.issueId, {attr: {"value": issue.id}}) }}
+    {{ form_widget(commentForm.submit) }}
+    {{ form_end(commentForm) }}
+{% endblock %}

@@ -67,6 +67,24 @@ class RedmineApiWorker
     }
 
     /**
+     * @param int $issueId
+     *
+     * @return array|null
+     */
+    public function getIssueById(int $issueId)
+    {
+        $issue = $this->getInfoFromApi('issues', [
+            'issue_id' => $issueId,
+        ]);
+
+        if (!$issue) {
+            return null;
+        }
+
+        return $issue[0];
+    }
+
+    /**
      * @param string $content
      * @param array $param
      * @return array|null
